@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lego-common" />
+        <module name="lego-common-db" />
+        <module name="lego-service-goods" />
+        <module name="lego-service-goods-api" />
+        <module name="lego-eureka" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="lego-common" target="1.8" />
+      <module name="lego-common-db" target="1.8" />
+      <module name="lego-eureka" target="1.8" />
+      <module name="lego-gateway" target="1.8" />
+      <module name="lego-parent" target="1.8" />
+      <module name="lego-service" target="1.8" />
+      <module name="lego-service-api" target="1.8" />
+      <module name="lego-service-goods" target="1.8" />
+      <module name="lego-service-goods-api" target="1.8" />
+      <module name="lego-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lego-common" options="-parameters" />
+      <module name="lego-common-db" options="-parameters" />
+      <module name="lego-eureka" options="-parameters" />
+      <module name="lego-service-goods" options="-parameters" />
+      <module name="lego-service-goods-api" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lego-common/lego-common.iml" filepath="$PROJECT_DIR$/lego-common/lego-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-common-db/lego-common-db.iml" filepath="$PROJECT_DIR$/lego-common-db/lego-common-db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-eureka/lego-eureka.iml" filepath="$PROJECT_DIR$/lego-eureka/lego-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-gateway/lego-gateway.iml" filepath="$PROJECT_DIR$/lego-gateway/lego-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-parent.iml" filepath="$PROJECT_DIR$/lego-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-service/lego-service.iml" filepath="$PROJECT_DIR$/lego-service/lego-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-service-api/lego-service-api.iml" filepath="$PROJECT_DIR$/lego-service-api/lego-service-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-service/lego-service-goods/lego-service-goods.iml" filepath="$PROJECT_DIR$/lego-service/lego-service-goods/lego-service-goods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-service-api/lego-service-goods-api/lego-service-goods-api.iml" filepath="$PROJECT_DIR$/lego-service-api/lego-service-goods-api/lego-service-goods-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lego-web/lego-web.iml" filepath="$PROJECT_DIR$/lego-web/lego-web.iml" />
+    </modules>
+  </component>
+</project>
