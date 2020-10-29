@@ -8,7 +8,7 @@ import java.io.Serializable;
  * @author Shadowalker
  * @Description: entity:MQ消息封装
  ****/
-public class Message implements Serializable{
+public class Message implements Serializable {
 
     //执行的操作  1：增加，2：修改,3：删除
     private int code;

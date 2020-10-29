@@ -24,7 +24,7 @@ public class DateUtil {
      * @param dateStr
      * @return
      */
-    public static String formatStr(String dateStr,String opattern,String npattern){
+    public static String formatStr(String dateStr, String opattern, String npattern) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(opattern);
         try {
             Date date = simpleDateFormat.parse(dateStr);
@@ -40,7 +40,7 @@ public class DateUtil {
      * 获取指定日期的凌晨
      * @return
      */
-    public static Date toDayStartHour(Date date){
+    public static Date toDayStartHour(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -58,7 +58,7 @@ public class DateUtil {
      * @param minutes
      * @return
      */
-    public static Date addDateMinutes(Date date,int minutes){
+    public static Date addDateMinutes(Date date, int minutes) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.add(Calendar.MINUTE, minutes);// 24小时制
@@ -71,7 +71,7 @@ public class DateUtil {
      * @param hour
      * @return
      */
-    public static Date addDateHour(Date date,int hour){//Jota-time
+    public static Date addDateHour(Date date, int hour) {//Jota-time
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.add(Calendar.HOUR, hour);// 24小时制
@@ -83,14 +83,14 @@ public class DateUtil {
      * 获取时间菜单
      * @return
      */
-    public static List<Date> getDateMenus(){
+    public static List<Date> getDateMenus() {
         //定义一个List<Date>集合，存储所有时间段
         List<Date> dates = getDates(12);
         //判断当前时间属于哪个时间范围
         Date now = new Date();
         for (Date cdate : dates) {
             //开始时间<=当前时间<开始时间+2小时
-            if(cdate.getTime()<=now.getTime() && now.getTime()<addDateHour(cdate,2).getTime()){
+            if (cdate.getTime() <= now.getTime() && now.getTime() < addDateHour(cdate, 2).getTime()) {
                 now = cdate;
                 break;
             }
@@ -98,8 +98,8 @@ public class DateUtil {
 
         //当前需要显示的时间菜单
         List<Date> dateMenus = new ArrayList<Date>();
-        for (int i = 0; i <5 ; i++) {
-            dateMenus.add(addDateHour(now,i*2));
+        for (int i = 0; i < 5; i++) {
+            dateMenus.add(addDateHour(now, i * 2));
         }
         return dateMenus;
     }
@@ -113,9 +113,9 @@ public class DateUtil {
         List<Date> dates = new ArrayList<Date>();
         //循环12次
         Date date = toDayStartHour(new Date()); //凌晨
-        for (int i = 0; i <hours ; i++) {
+        for (int i = 0; i < hours; i++) {
             //每次递增2小时,将每次递增的时间存入到List<Date>集合中
-            dates.add(addDateHour(date,i*2));
+            dates.add(addDateHour(date, i * 2));
         }
         return dates;
     }
@@ -126,7 +126,7 @@ public class DateUtil {
      * @param pattern
      * @return
      */
-    public static String data2str(Date date, String pattern){
+    public static String data2str(Date date, String pattern) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
         return simpleDateFormat.format(date);
     }

@@ -27,6 +27,7 @@ public class JwtUtil {
 
     /**
      * 生成令牌
+     *
      * @param id
      * @param subject
      * @param ttlMillis

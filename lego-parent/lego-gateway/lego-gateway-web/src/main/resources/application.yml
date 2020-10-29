@@ -4,46 +4,49 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]': # 匹配所有请求
-              allowedOrigins: "*" #跨域处理 允许所有的域
-              allowedMethods: # 支持的方法
-                - GET
-                - POST
-                - PUT
-                - DELETE
+            allowedOrigins: "*" #跨域处理 允许所有的域
+            allowedMethods: # 支持的方法
+              - GET
+              - POST
+              - PUT
+              - DELETE
       routes:
-            # 唯一标识符
-            - id: lego_goods_route
-              # 用户请求需要路由到该服务（指定要路由的服务）
-              # lb：使用 LoadBalancerClient 实现负载均衡，后面 goods 是微服务的名称（主要用于集群环境）
-              uri: lb://goods
-              #  路由断言，路由规则配置
-              predicates:
-              - Path=/api/goods/**
-              filters:
-              # 将请求路径中的第一个路径去掉，请求路径以 / 区分，一个 / 代表一个路径
-              - StripPrefix=1
-              # 用户请求 /**->/brand/**，并且将该请求路由到 http://localhost:18081微服务
-              # 和上面的二选一即可
-              # PrefixPath=/brand
-              - name: RequestRateLimiter #请求数限流 名字不能随便写 ，使用默认的facatory
-                args:
-                  key-resolver: "#{@ipKeyResolver}"
-                  redis-rate-limiter.replenishRate: 1
-                  redis-rate-limiter.burstCapacity: 1
-            #用户微服务
-            - id: lego_user_route
-              uri: lb://user
-              predicates:
-              - Path=/api/user/**,/api/address/**,/api/areas/**,/api/cities/**,/api/provinces/**
-              filters:
-              - StripPrefix=1
+        # 唯一标识符
+        - id: lego_goods_route
+          # 用户请求需要路由到该服务（指定要路由的服务）
+          # lb：使用 LoadBalancerClient 实现负载均衡，后面 goods 是微服务的名称（主要用于集群环境）
+          uri: lb://goods
+          #  路由断言，路由规则配置
+          predicates:
+            - Path=/api/goods/**
+          filters:
+            # 将请求路径中的第一个路径去掉，请求路径以 / 区分，一个 / 代表一个路径
+            - StripPrefix=1
+            # 用户请求 /**->/brand/**，并且将该请求路由到 http://localhost:18081微服务
+            # 和上面的二选一即可
+            # PrefixPath=/brand
+            - name: RequestRateLimiter #请求数限流 名字不能随便写 ，使用默认的facatory
+              args:
+                # 用户身份唯一标识符，IP 地址
+                key-resolver: "#{@ipKeyResolver}"
+                # 每秒钟只允许有 1 个请求
+                redis-rate-limiter.replenishRate: 1
+                # 允许并发有 1 个请求（宽限的个数）
+                redis-rate-limiter.burstCapacity: 1
+        #用户微服务
+        - id: lego_user_route
+          uri: lb://user
+          predicates:
+            - Path=/api/user/**,/api/address/**,/api/areas/**,/api/cities/**,/api/provinces/**
+          filters:
+            - StripPrefix=1
 
-            - id: lego_order_route
-              uri: lb://order
-              predicates:
-              - Path=/api/cart/**,/api/categoryReport/**,/api/orderConfig/**,/api/order/**,/api/orderItem/**,/api/orderLog/**,/api/preferential/**,/api/returnCause/**,/api/returnOrder/**,/api/returnOrderItem/**
-              filters:
-              - StripPrefix=1
+        - id: lego_order_route
+          uri: lb://order
+          predicates:
+            - Path=/api/cart/**,/api/categoryReport/**,/api/orderConfig/**,/api/order/**,/api/orderItem/**,/api/orderLog/**,/api/preferential/**,/api/returnCause/**,/api/returnOrder/**,/api/returnOrderItem/**
+          filters:
+            - StripPrefix=1
 
   application:
     name: gateway-web

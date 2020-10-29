@@ -22,7 +22,6 @@
     <dependencies>
 
 
-
         <!--通用的common  要有feign的依赖-->
         <dependency>
             <groupId>com.lego</groupId>
