@@ -11,12 +11,20 @@ spring:
                 - PUT
                 - DELETE
       routes:
+            # 唯一标识符
             - id: lego_goods_route
+              # 用户请求需要路由到该服务（指定要路由的服务）
+              # lb：使用 LoadBalancerClient 实现负载均衡，后面 goods 是微服务的名称（主要用于集群环境）
               uri: lb://goods
+              #  路由断言，路由规则配置
               predicates:
               - Path=/api/goods/**
               filters:
+              # 将请求路径中的第一个路径去掉，请求路径以 / 区分，一个 / 代表一个路径
               - StripPrefix=1
+              # 用户请求 /**->/brand/**，并且将该请求路由到 http://localhost:18081微服务
+              # 和上面的二选一即可
+              # PrefixPath=/brand
               - name: RequestRateLimiter #请求数限流 名字不能随便写 ，使用默认的facatory
                 args:
                   key-resolver: "#{@ipKeyResolver}"
