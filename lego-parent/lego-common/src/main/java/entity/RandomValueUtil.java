@@ -2,7 +2,7 @@ package entity;
 
 /***
  *
- * @Author:www.itheima.com
+ * @author Shadowalker
  * @Description:itheima
  *
  ****/

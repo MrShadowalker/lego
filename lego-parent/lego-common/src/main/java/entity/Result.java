@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * 描述
  *
- * @author 三国的包子
+ * @author Shadowalker
  * @version 1.0
  * @package entity *
  * @since 1.0

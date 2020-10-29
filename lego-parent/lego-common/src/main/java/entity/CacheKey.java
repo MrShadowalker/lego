@@ -1,7 +1,7 @@
 package entity;
 
 /****
- * @Author:www.itheima.com
+ * @author Shadowalker
  * @Description:
  *****/
 public class CacheKey {

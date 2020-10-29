@@ -13,7 +13,7 @@ import java.util.Date;
 /**
  * 描述
  *
- * @author www.itheima.com
+ * @author Shadowalker
  * @version 1.0
  * @package entity *
  * @since 1.0

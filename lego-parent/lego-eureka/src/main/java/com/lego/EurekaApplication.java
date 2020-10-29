@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 /**
  * 描述
  *
- * @author 三国的包子
+ * @author Shadowalker
  * @version 1.0
  * @package com.lego *
  * @since 1.0
