@@ -15,6 +15,10 @@
     <description>
         web工程所在的父工程
     </description>
+    <modules>
+        <module>lego-web-search</module>
+        <module>lego-web-item</module>
+    </modules>
 
 
 </project>

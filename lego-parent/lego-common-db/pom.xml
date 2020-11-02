@@ -17,7 +17,6 @@
         <dependency>
             <groupId>com.lego</groupId>
             <artifactId>lego-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
         </dependency>
         <!--通用mapper起步依赖-->
         <dependency>

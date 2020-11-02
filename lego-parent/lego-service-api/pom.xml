@@ -17,12 +17,16 @@
     </description>
     <modules>
         <module>lego-service-goods-api</module>
+        <module>lego-service-content-api</module>
+        <module>lego-service-search-api</module>
+        <module>lego-web-item-api</module>
+        <module>lego-service-user-api</module>
+        <module>lego-service-order-api</module>
+        <module>lego-service-seckill-api</module>
     </modules>
 
     <dependencies>
-
-
-        <!--通用的common  要有feign的依赖-->
+        <!--通用的 common 要有feign的依赖-->
         <dependency>
             <groupId>com.lego</groupId>
             <artifactId>lego-common</artifactId>

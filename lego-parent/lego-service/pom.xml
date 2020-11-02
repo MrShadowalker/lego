@@ -17,6 +17,14 @@
     </description>
     <modules>
         <module>lego-service-goods</module>
+        <module>lego-service-file</module>
+        <module>lego-servcie-canal</module>
+        <module>lego-service-content</module>
+        <module>lego-service-search</module>
+        <module>lego-service-user</module>
+        <module>lego-service-order</module>
+        <module>lego-service-pay</module>
+        <module>lego-service-seckill</module>
     </modules>
 
     <dependencies>
